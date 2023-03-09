@@ -37,20 +37,28 @@ function App() {
     }
   }
 
+  const handleReset = (e) => {
+    if (window.confirm("Press OK to restart game\n\nOR\n\nPress cancel to continue playing")) {
+      setStart("")
+      setPause(false)
+      setScore(0)
+    }
+  }
+
   let showGame = pause ? <div className='container' style={{ height: "612px", "align-content": "center", "justify-content": "center" }}><h1>PAUSED</h1></div> : <div>{createMoleHill()}</div>
 
   const showScore = () => {
-    if (score == 0){
+    if (score == 0) {
       return (
         <span>{score}</span>
       )
     } else if (score > 0) {
       return (
-        <span style={{color: "thistle"}}>{score}</span>
+        <span style={{ color: "thistle" }}>{score}</span>
       )
     } else {
       return (
-        <span style={{color: "red"}}>{score}</span>
+        <span style={{ color: "red" }}>{score}</span>
       )
     }
   }
@@ -59,11 +67,16 @@ function App() {
     <div className="App">
       <h1>REACT-A-MOLE!</h1>
       <h2>SCORE: {showScore()}</h2>
-      <button onClick={handleStart}>
-        {
-          pause ? <span>Resume Game</span> : <span>Pause Game</span>
-        }
-      </button>
+      <div>
+        <button onClick={handleStart}>
+          {
+            pause ? <span>Resume Game</span> : <span>Pause Game</span>
+          }
+        </button>
+        <button className='restart' onClick={handleReset}>
+          <span>Restart Game</span>
+        </button>
+      </div>
       {showGame}
       {/* {createMoleHill()} */}
     </div >
