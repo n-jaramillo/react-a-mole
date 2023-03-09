@@ -47,7 +47,7 @@
   margin: 20px auto 0;
   padding: 30px 30px 50px;
   border-radius: 20px;
-  border: 5px #80505d ridge;
+  border: 10px #80505d ridge;
 }
 
 
@@ -55,8 +55,16 @@
 h1,
 h2 {
   color: white;
-
   text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+h2 {
+  margin: 5px auto;
+  min-width: 190px;
+  max-width: 300px;
+  background-color: #80505d;
+  border: 5px #80505d ridge;
+  border-radius: 5px;
 }
 
 /* Mole, Mole Hill Image Container */
@@ -67,4 +75,18 @@ h2 {
 /* Mole, Mole Hill Image */
 .slot {
   width: 200px;
+}
+
+button {
+  border: none;
+  width: 200px;
+  height: 30px;
+  color: white;
+  background-color: #80505d;
+  font-variant: small-caps;
+  font-weight: bold;
+  letter-spacing: 5px;
+  border: 5px #80505d ridge;
+  border-radius: 5px;
+  text-shadow: 2px 2px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
